@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Добавить запись о картридже</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="full_name">ФИО:</label>
+            <input type="text" id="full_name" name="full_name" required>
+        </div>
+        <div class="form-group">
+            <label for="department">Подразделение:</label>
+            <input type="text" id="department" name="department" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Объект:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="cartridge_model">Модель картриджа:</label>
+            <input type="text" id="cartridge_model" name="cartridge_model" required>
+        </div>
+        <div class="form-group">
+            <label for="start_date">Дата начала:</label>
+            <input type="date" id="start_date" name="start_date" required>
+        </div>
+        <div class="form-group">
+            <label for="end_date">Дата окончания (необязательно):</label>
+            <input type="date" id="end_date" name="end_date">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Количество:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}

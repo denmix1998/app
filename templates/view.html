@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Просмотр записей</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Подразделение</th>
+                <th>Объект</th>
+                <th>Модель картриджа</th>
+                <th>Дата начала</th>
+                <th>Дата окончания</th>
+                <th>Количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cartridge in cartridges %}
+            <tr>
+                <td>{{ cartridge.full_name }}</td>
+                <td>{{ cartridge.department }}</td>
+                <td>{{ cartridge.location }}</td>
+                <td>{{ cartridge.cartridge_model }}</td>
+                <td>{{ cartridge.start_date.strftime('%d.%m.%Y') }}</td>
+                <td>{{ cartridge.end_date.strftime('%d.%m.%Y') if cartridge.end_date else '-' }}</td>
+                <td>{{ cartridge.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
